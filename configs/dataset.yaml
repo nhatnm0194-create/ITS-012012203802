@@ -1,0 +1,11 @@
+path: data/processed
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: speed_limit
+  1: stop
+  2: no_entry
+  3: warning

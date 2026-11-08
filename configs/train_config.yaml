@@ -1,0 +1,16 @@
+model_type: "yolov8n.pt"
+
+dataset_config: "configs/dataset.yaml"
+
+training:
+  epochs: 50
+  batch_size: 16
+  image_size: 640
+  learning_rate: 0.01
+  optimizer: "SGD"
+  device: "cpu"
+
+paths:
+  output_dir: "outputs/"
+  checkpoint_dir: "outputs/checkpoints/"
+  log_dir: "outputs/logs/"
