@@ -1,4 +1,3 @@
-
 import yaml
 from pathlib import Path
 from ultralytics import YOLO
@@ -10,10 +9,9 @@ def load_config(config_path):
 
 
 def train_model():
-    # Đọc cấu hình
+    
     config = load_config("configs/train_config.yaml")
 
-    # Lấy thông số
     training = config["training"]
     paths = config["paths"]
 
@@ -21,15 +19,12 @@ def train_model():
     Path(paths["checkpoint_dir"]).mkdir(
         parents=True, exist_ok=True
     )
-
     Path(paths["log_dir"]).mkdir(
         parents=True, exist_ok=True
     )
 
-    # Khởi tạo mô hình
     model = YOLO(config["model_type"])
 
-    # Huấn luyện
     results = model.train(
         data=config["dataset_config"],
         epochs=training["epochs"],
